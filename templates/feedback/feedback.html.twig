@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block section_content %}
+
+    {{ form_start(form, {
+        'action': path('contacts'),
+        'method': 'POST',
+        'attr':{novalidate:'novalidate'},
+    }) }}
+
+    <div class="form-group">
+        {{ form_row(form._token) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.username) }}
+    </div>
+
+    {{ form_row(form.userQuestion) }}
+
+    <div class="form-group">
+        {{ form_row(form.userEmail) }}
+    </div>
+
+    {{ form_widget(form.confirm,{
+        'attr': {'class': 'btn btn-success'},
+    }) }}
+
+    {{ form_end(form) }}
+{% endblock %}

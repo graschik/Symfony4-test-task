@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block section_content %}
+
+    <h2>ID: {{ product.getId }}</h2>
+
+    <h2>Name: {{ product.getName }}</h2>
+
+    <h2>Price: {{ product.getPrice }}</h2>
+
+    <h2>Category:
+        <a href="{{ path('show_category_id', {'categoryId':product.getCategory.getId}) }}"> {{ product.getCategory.getName }} </a>
+    </h2>
+    
+{% endblock %}
